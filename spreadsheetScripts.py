@@ -27,7 +27,8 @@ def checkSheet(path,dataType):
                    #dateTimeValidator(currentValue, '%m/%d/%Y')
                     print("date validation")
                 if(currentColumn == 7):
-                    emailValidator(currentValue)
+                    if(currentColumn!=emailValidator(currentValue)):
+                        flaggedRows.append([currentRow, emailValidator(currentValue)])
                 if(currentColumn == 8):
                     if(isinstance(currentValue,int)==False):
                         flaggedRows.append([currentRow,"Grade error"])
