@@ -22,7 +22,12 @@ def checkSheet(path,dataType):
                 currentValue=sheet.cell(row=currentRow, column=currentColumn).value
                 if(currentColumn in [1,2,3,5,6]):
                     if(nameChecker(currentValue)==False):
-                        flaggedRows.append([currentRow, "name error"])
+                        if(currentColumn<=2):
+                            flaggedRows.append([currentRow, "student name error"])
+                        if(currentColumn==3):
+                            flaggedRows.append([currentRow, "school name error"])
+                        if(currentColumn>=5):
+                            flaggedRows.append([currentRow, "parent name error"])
                 if(currentColumn == 4):
                    #dateTimeValidator(currentValue, '%m/%d/%Y')
                     print("date validation")
