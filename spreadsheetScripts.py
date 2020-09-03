@@ -35,7 +35,7 @@ def checkSheet(path,dataType):
                     if(currentColumn!=emailValidator(currentValue)):
                         flaggedRows.append([currentRow, emailValidator(currentValue)])
                 if(currentColumn == 8):
-                    if(isinstance(currentValue,int)==False):
+                    if(currentValue.is_integer()==False):
                         flaggedRows.append([currentRow,"Grade error"])
 
 
